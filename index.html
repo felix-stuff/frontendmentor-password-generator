@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png" />
+    <link rel="stylesheet" href="./styles.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap"
+      rel="stylesheet"
+    />
+
+    <script src="main.js" defer></script>
+
+    <title>Frontend Mentor | Password generator app</title>
+  </head>
+  <body>
+    <main>
+      <h1 class="headline">Password Generator</h1>
+      <div class="generator">
+        <div class="generator__password">
+          <label class="sr-only">Password:</label>
+          <input
+            id="password-input"
+            readonly
+            name="password-input"
+            type="text"
+            placeholder="P4$5W0rD!"
+          />
+
+          <button class="button button--text" id="copy-button">
+            <span class="button__label" id="copy-label"></span>
+            <span class="sr-only">Copy</span>
+            <svg width="21" height="24" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z"
+                fill="#A4FFAF"
+              />
+            </svg>
+          </button>
+        </div>
+
+        <form id="generator-form" class="generator__form">
+          <div class="form-content">
+            <div class="range-slider">
+              <label for="char-range">Character Length</label>
+              <span id="char-range-value">0</span>
+              <input type="range" id="char-range" name="char-range" value="0" min="0" />
+            </div>
+
+            <div class="checkboxes">
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="uppercase" id="uppercase" />
+                <span class="checkbox__label">Include Uppercase Letters</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="lowercase" id="lowercase" />
+                <span class="checkbox__label">Include Lowercase Letters</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="numbers" id="numbers" />
+                <span class="checkbox__label">Include Numbers</span>
+              </label>
+              <label class="checkbox">
+                <input class="checkbox__input" type="checkbox" name="symbols" id="symbols" />
+                <span class="checkbox__label">Include Symbols</span>
+              </label>
+            </div>
+
+            <div class="pw-strength">
+              <span class="pw-strength__label">Strength</span>
+              <div class="pw-strength-container">
+                <strong id="pw-strength__result"></strong>
+                <div id="pw-strength__indicator">
+                  <span class="pw-strength__indicator-item"></span>
+                  <span class="pw-strength__indicator-item"></span>
+                  <span class="pw-strength__indicator-item"></span>
+                  <span class="pw-strength__indicator-item"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <button class="button button--primary" id="submit-button" disabled>
+            Generate<svg width="12" height="12" xmlns="http://www.w3.org/2000/svg">
+              <path
+                fill="#24232C"
+                d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"
+              />
+            </svg>
+          </button>
+        </form>
+      </div>
+    </main>
+  </body>
+</html>
